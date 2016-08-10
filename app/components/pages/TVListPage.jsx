@@ -1,7 +1,6 @@
 import React from 'react';
 
-import {TVList, ListItem} from '../lists'
-import {Link} from 'react-router'
+import {TVList, ListItem} from '../lists';
 
 const App = React.createClass({
   render() {

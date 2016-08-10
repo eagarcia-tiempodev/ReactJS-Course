@@ -93,18 +93,17 @@ case 'stats':
   config = merge(
     common,
     sourceMaps.production,
-    
-    
+
     parts.setFreeVariable(
       'process.env.NODE_ENV',
       'production'
     ),
 
-    
+
     parts.clean(PATHS.build),
     parts.minify(),
     parts.copyStaticAssets(PATHS.assets),
-    
+
     parts.purifyCSS([PATHS.app]),
     parts.extractCSS(PATHS.style)
   );

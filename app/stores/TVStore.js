@@ -43,7 +43,6 @@ TVStore.dispatchToken = AppDispatcher.register((action) => {
         store.movies = action.movies;
         __emitter.emit(CHANGE_EVENT);
         break;
-
     }
 
 });
