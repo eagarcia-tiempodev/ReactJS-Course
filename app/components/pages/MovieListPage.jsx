@@ -1,7 +1,6 @@
 import React from 'react';
 
-import {TVList, ListItem} from '../lists'
-import {Link} from 'react-router'
+import {Link} from 'react-router';
 import TVStore from '../../stores/TVStore';
 import TVActions from '../../actions/TVActions';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {TVList, ListItem} from '../lists';
+import {TVList} from '../TVList';
 
 const App = React.createClass({
   render() {

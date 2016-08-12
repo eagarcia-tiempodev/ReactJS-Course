@@ -21,9 +21,8 @@ class Home extends React.Component {
     handleStoreChange(){
         this.setState(TVStore.getState());
     }
-    
+
     render() {
-        // console.log(this.state.genres);
         return (
             <div>
                 <h3>HomePage</h3>
