@@ -29,6 +29,11 @@ class MovieDetailPage extends React.Component {
             { key: 'homepage', label: 'Homepage' },
             { key: 'overview', label: 'Overview' },
         ];
+
+        if(!this.state.currentMovie) {
+            return <h2>Loading ...</h2>;
+        }
+
         return (
             <div className='movie-detail'>
                 <h2>{this.state.currentMovie.title}</h2>
@@ -44,6 +49,13 @@ class MovieDetailPage extends React.Component {
                         })}
                     </tbody>
                 </table>
+                <h2> Trailers </h2>
+                <ul>
+                    {this.state.currentMovie.trailers.youtube.map((video) => {
+                        return <li><a href={`https://youtube.com/watch?v=${video.source}`}>{video.name}</a></li>;
+                    })}
+                </ul>
+                <h2> Poster</h2>
                 <img src={`http://image.tmdb.org/t/p/w500${this.state.currentMovie.poster_path}`} />
             </div>
         )

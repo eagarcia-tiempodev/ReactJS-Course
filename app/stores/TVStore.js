@@ -8,7 +8,7 @@ let __emitter = new EventEmitter();
 let store = {
     genres: [],
     movies: [],
-    currentMovie: {},
+    currentMovie: null,
 }
 
 let TVStore = {
@@ -46,7 +46,7 @@ TVStore.dispatchToken = AppDispatcher.register((action) => {
             break;
 
         case TVConstants.GET_MOVIE:
-            store.currentMovie = {};
+            store.currentMovie = null;
             __emitter.emit(CHANGE_EVENT);
             break;
 

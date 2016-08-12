@@ -18,9 +18,3 @@ body {
 .movie-detail table th {
     width: 10%;
 }
-
-.movie-detail img {
-    padding: 20px;
-    display: block;
-    margin: 0 auto;
-}

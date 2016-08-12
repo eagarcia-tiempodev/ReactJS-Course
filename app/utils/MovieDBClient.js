@@ -10,14 +10,14 @@ export const imageSizes = {
     'xlarge':'w1920'
 };
 
-function generate_url(path) {
-    return `https://api.themoviedb.org/3${path}?api_key=${apiKey}&language=en&include_image_language=en,null`;
+function generate_url(path, append) {
+    return `https://api.themoviedb.org/3${path}?api_key=${apiKey}&append_to_response=${append}&language=en&include_image_language=en,null`;
 }
 
 
 const client  = {
-    get: function(path) {
-        const url = generate_url(path);
+    get: function(path, append = '') {
+        const url = generate_url(path, append);
         return fetch(url)
             .then(function(response) {
                 return response.json()

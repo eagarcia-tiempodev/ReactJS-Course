@@ -38,7 +38,7 @@ const TVActions = {
             type: TVConstants.GET_MOVIE,
             movie: {},
         });
-        MovieDBClient.get(`/movie/${movie_id}`).then( response => {
+        MovieDBClient.get(`/movie/${movie_id}`, 'trailers').then( response => {
             AppDispatcher.dispatch({
                 type: TVConstants.GET_MOVIE_SUCCESS,
                 movie: response,
