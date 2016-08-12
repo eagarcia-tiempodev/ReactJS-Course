@@ -7,7 +7,8 @@ const CHANGE_EVENT = 'change';
 let __emitter = new EventEmitter();
 let store = {
     genres: [],
-    movies: []
+    movies: [],
+    currentMovie: {},
 }
 
 let TVStore = {
@@ -24,25 +25,35 @@ let TVStore = {
 
 TVStore.dispatchToken = AppDispatcher.register((action) => {
     switch (action.type) {
-    case TVConstants.GET_GENRES:
-        store.genres = [] ;
-        __emitter.emit(CHANGE_EVENT);
-        break;
+        case TVConstants.GET_GENRES:
+            store.genres = [] ;
+            __emitter.emit(CHANGE_EVENT);
+            break;
 
-    case TVConstants.GET_GENRES_SUCCESS:
-        store.genres = action.genres;
-        __emitter.emit(CHANGE_EVENT);
-        break;
+        case TVConstants.GET_GENRES_SUCCESS:
+            store.genres = action.genres;
+            __emitter.emit(CHANGE_EVENT);
+            break;
 
-    case TVConstants.GET_MOVIES:
-        store.movies = [] ;
-        __emitter.emit(CHANGE_EVENT);
-        break;
+        case TVConstants.GET_MOVIES:
+            store.movies = [] ;
+            __emitter.emit(CHANGE_EVENT);
+            break;
 
-    case TVConstants.GET_MOVIES_SUCCESS:
-        store.movies = action.movies;
-        __emitter.emit(CHANGE_EVENT);
-        break;
+        case TVConstants.GET_MOVIES_SUCCESS:
+            store.movies = action.movies;
+            __emitter.emit(CHANGE_EVENT);
+            break;
+
+        case TVConstants.GET_MOVIE:
+            store.currentMovie = {};
+            __emitter.emit(CHANGE_EVENT);
+            break;
+
+        case TVConstants.GET_MOVIE_SUCCESS:
+            store.currentMovie = action.movie;
+            __emitter.emit(CHANGE_EVENT);
+            break;
     }
 
 });

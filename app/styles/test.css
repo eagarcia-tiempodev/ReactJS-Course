@@ -6,3 +6,18 @@ body {
     font-size:1rem;
 }
 
+.movie-detail {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.movie-detail h2 {
+    text-align: center;
+}
+
+.movie-detail table td {
+    padding: 7px;
+}
+.movie-detail table th {
+    width: 10%;
+}

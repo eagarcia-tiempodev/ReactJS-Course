@@ -36,12 +36,12 @@ const TVActions = {
     getMovie(movie_id) {
         AppDispatcher.dispatch({
             type: TVConstants.GET_MOVIE,
-            genres: []
+            movie: {},
         });
-        MovieDBClient.get('/genre/movie/list').then( response => {
+        MovieDBClient.get(`/movie/${movie_id}`).then( response => {
             AppDispatcher.dispatch({
                 type: TVConstants.GET_MOVIE_SUCCESS,
-                genres: response.genres
+                movie: response,
             });
         });
   },

@@ -15,7 +15,7 @@ function generate_url(path) {
 }
 
 
-const client  = {    
+const client  = {
     get: function(path) {
         const url = generate_url(path);
         return fetch(url)

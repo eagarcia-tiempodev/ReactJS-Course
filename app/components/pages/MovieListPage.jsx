@@ -30,7 +30,7 @@ class MovieListPage  extends React.Component {
         if( this.state.movies.length > 0) {
             listItems = this.state.movies.map( (item,i) => {
                 return (
-                    <li key={item.id}>{item.title} > <Link to={'/movie/' + item.id}>View Movies</Link></li>
+                    <li key={item.id}>{item.title} > <Link to={'/movie/' + item.id}>View Detail</Link></li>
                 );
             });
         }
